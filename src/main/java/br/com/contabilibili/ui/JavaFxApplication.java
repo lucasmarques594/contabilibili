@@ -23,12 +23,11 @@ public class JavaFxApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(
-                getClass().getResource("/br/com/contabilibili/ui/view/TelaInicial.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/br/com/contabilibili/ui/view/MainView.fxml"));
         fxmlLoader.setControllerFactory(applicationContext::getBean);
         Parent root = fxmlLoader.load();
         stage.setTitle("Contabilibili - Sistema de Contabilidade");
-        stage.setScene(new Scene(root, 800, 600));
+        stage.setScene(new Scene(root));
         stage.show();
     }
 
