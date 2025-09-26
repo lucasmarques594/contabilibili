@@ -23,4 +23,14 @@ public class CartorioRepositoryImpl implements CartorioRepository {
     public Optional<Cartorio> findById(Long id) {
         return jpaRepository.findById(id);
     }
+
+    @Override
+    public java.util.List<Cartorio> findAll() {
+        return jpaRepository.findAll();
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        jpaRepository.deleteById(id);
+    }
 }
