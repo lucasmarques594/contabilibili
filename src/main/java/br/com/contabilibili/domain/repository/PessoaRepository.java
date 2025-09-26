@@ -1,5 +1,10 @@
 package br.com.contabilibili.domain.repository;
 
-public class PessoaRepository {
-    
+import br.com.contabilibili.domain.model.Pessoa;
+import java.util.Optional;
+
+public interface PessoaRepository {
+    Pessoa save(Pessoa pessoa);
+
+    Optional<Pessoa> findById(Long id);
 }
