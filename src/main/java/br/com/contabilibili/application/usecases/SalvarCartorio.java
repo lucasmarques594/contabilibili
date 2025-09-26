@@ -7,13 +7,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class RegistrarCartorio {
-
+public class SalvarCartorio {
     private final CartorioRepository cartorioRepository;
-
-    public Cartorio executar(String nome) {
-        Cartorio novoCartorio = new Cartorio();
-        novoCartorio.setNome(nome);
-        return cartorioRepository.save(novoCartorio);
+    public Cartorio executar(Cartorio cartorio) {
+        return cartorioRepository.save(cartorio);
     }
 }
