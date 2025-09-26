@@ -60,11 +60,11 @@ O sistema é dividido em camadas, seguindo os princípios do DDD, para garantir 
 
 ```mermaid
 flowchart TD
-    A[Usuário] -->|Interage com| B[UI (JavaFX)]
-    B -->|Chama| C[Application (Use Cases/Services)]
-    C -->|Usa Interfaces do| D{Domain (Models & Repositories)}
-    D -->|E implementado por| E[Infrastructure (JPA/Hibernate)]
-    E -->|Persiste em| F[(PostgreSQL DB)]
+    A["Usuário"] -->|"Interage com"| B["UI (JavaFX)"]
+    B -->|"Chama"| C["Application (Use Cases/Services)"]
+    C -->|"Usa Interfaces do"| D{"Domain (Models & Repositories)"}
+    D -->|"É implementado por"| E["Infrastructure (JPA/Hibernate)"]
+    E -->|"Persiste em"| F[("PostgreSQL DB")]
 ```
 
 ---
