@@ -1,5 +1,10 @@
 package br.com.contabilibili.domain.repository;
 
-public class CartorioRepository {
+import br.com.contabilibili.domain.model.Cartorio;
+import java.util.Optional;
 
+public interface CartorioRepository {
+    Cartorio save(Cartorio cartorio);
+
+    Optional<Cartorio> findById(Long id);
 }
