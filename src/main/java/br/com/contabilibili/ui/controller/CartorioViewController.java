@@ -19,12 +19,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class CartorioViewController {
 
-    // Casos de Uso injetados pelo Spring
     private final ListarCartorios listarCartorios;
     private final SalvarCartorio salvarCartorio;
     private final ExcluirCartorio excluirCartorio;
 
-    // Componentes da Tela
     @FXML
     private TableView<Cartorio> tabelaCartorios;
     @FXML
@@ -50,12 +48,9 @@ public class CartorioViewController {
 
     @FXML
     public void initialize() {
-        // Configura as colunas da tabela para buscar os dados dos atributos do objeto
-        // Cartorio
         colunaId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 
-        // Adiciona um listener para quando uma linha da tabela for selecionada
         tabelaCartorios.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> selecionarCartorio(newValue));
 
