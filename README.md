@@ -63,7 +63,7 @@ flowchart TD
     A[Usuário] -->|Interage com| B[UI (JavaFX)]
     B -->|Chama| C[Application (Use Cases/Services)]
     C -->|Usa Interfaces do| D{Domain (Models & Repositories)}
-    D -->|É implementado por| E[Infrastructure (JPA/Hibernate)]
+    D -->|E implementado por| E[Infrastructure (JPA/Hibernate)]
     E -->|Persiste em| F[(PostgreSQL DB)]
 ```
 
@@ -102,10 +102,10 @@ b. Acesse o `psql` e defina a senha para o seu usuário (o exemplo assume que se
 psql postgres
 
 -- Dentro do psql, execute:
-\password lucasmarques594 
--- Digite a senha 'postgres123' (ou a que estiver no application.properties)
+\password usuario_postgres
+-- Digite a senha 'senha_postgres' (ou a que estiver no application.properties)
 ```
-> **Atenção:** O arquivo `src/main/resources/application.properties` está configurado para o usuário `lucasmarques594` e senha `postgres123`. Ajuste-o se o seu usuário for diferente.
+> **Atenção:** O arquivo `src/main/resources/application.properties` está configurado para o usuário `usuario_postgres` e senha `senha_postgres`. Ajuste-o se o seu usuário for diferente.
 
 **3. Compilar o Projeto**
 
