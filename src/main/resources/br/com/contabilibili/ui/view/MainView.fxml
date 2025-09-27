@@ -4,36 +4,25 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
 
-<BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0"
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="br.com.contabilibili.ui.controller.MainViewController">
-
+<BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.contabilibili.ui.controller.MainViewController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
-         <menus>
-            <Menu mnemonicParsing="false" text="Cadastros">
-               <items>
-                  <MenuItem fx:id="menuCartorios" mnemonicParsing="false" onAction="#abrirTelaCartorios" text="Cartórios" />
-                  <MenuItem fx:id="menuPessoas" mnemonicParsing="false" text="Pessoas" />
-                  <MenuItem fx:id="menuProcessos" mnemonicParsing="false" text="Processos" />
-                  <MenuItem fx:id="menuLancamentos" mnemonicParsing="false" text="Lançamentos Financeiros" />
-               </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Sistema">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#fecharAplicacao" text="Sair" />
-               </items>
-            </Menu>
-         </menus>
+        <menus>
+          <Menu mnemonicParsing="false" text="Cadastros">
+            <items>
+              <MenuItem fx:id="menuCartorios" mnemonicParsing="false" onAction="#abrirTelaCartorios" text="Cartórios" />
+              <MenuItem fx:id="menuPessoas" mnemonicParsing="false" text="Pessoas" />
+              <MenuItem fx:id="menuProcessos" mnemonicParsing="false" text="Processos" />
+              <MenuItem fx:id="menuLancamentos" mnemonicParsing="false" text="Lançamentos Financeiros" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Sistema">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#fecharAplicacao" text="Sair" />
+            </items>
+          </Menu>
+        </menus>
       </MenuBar>
    </top>
-   <center>
-      <VBox alignment="CENTER">
-         <Label text="Bem-vindo ao Contabilibili!" />
-      </VBox>
-   </center>
 </BorderPane>
