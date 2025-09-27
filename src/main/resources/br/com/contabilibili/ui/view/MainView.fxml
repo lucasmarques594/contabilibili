@@ -12,9 +12,9 @@
           <Menu mnemonicParsing="false" text="Cadastros">
             <items>
               <MenuItem fx:id="menuCartorios" mnemonicParsing="false" onAction="#abrirTelaCartorios" text="Cartórios" />
-              <MenuItem fx:id="menuPessoas" mnemonicParsing="false" text="Pessoas" />
-              <MenuItem fx:id="menuProcessos" mnemonicParsing="false" text="Processos" />
-              <MenuItem fx:id="menuLancamentos" mnemonicParsing="false" text="Lançamentos Financeiros" />
+              <MenuItem fx:id="menuPessoas" mnemonicParsing="false" onAction="#abrirTelaPessoas" text="Pessoas" />
+              <MenuItem fx:id="menuProcessos" mnemonicParsing="false" onAction="#abrirTelaProcessos" text="Processos" />
+              <MenuItem fx:id="menuLancamentos" mnemonicParsing="false" onAction="#abrirTelaLancamentos" text="Lançamentos Financeiros" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Sistema">
