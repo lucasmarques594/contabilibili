@@ -24,8 +24,22 @@ public class MainViewController {
     }
 
     @FXML
+    public void initialize() {
+        abrirTelaHome();
+    }
+
+    public void abrirTelaHome() {
+        carregarView("HomeView", false);
+    }
+
+    @FXML
     void abrirTelaCartorios(ActionEvent event) {
-        carregarView("CartorioView");
+        carregarView("CartorioView", true);
+    }
+
+    @FXML
+    void abrirTelaPessoas(ActionEvent event) {
+        carregarView("PessoaView", true);
     }
 
     @FXML
@@ -33,12 +47,20 @@ public class MainViewController {
         Platform.exit();
     }
 
-    private void carregarView(String viewNome) {
+    private void carregarView(String viewNome, boolean passarReferencia) {
         try {
             FXMLLoader loader = new FXMLLoader(
                     getClass().getResource("/br/com/contabilibili/ui/view/" + viewNome + ".fxml"));
             loader.setControllerFactory(springContext::getBean);
             Parent view = loader.load();
+            if (passarReferencia) {
+                if (loader.getController() instanceof CartorioViewController) {
+                    ((CartorioViewController) loader.getController()).setMainController(this);
+                } else if (loader.getController() instanceof PessoaViewController) {
+                    ((PessoaViewController) loader.getController()).setMainController(this);
+                }
+            }
+
             mainPane.setCenter(view);
         } catch (IOException e) {
             e.printStackTrace();
