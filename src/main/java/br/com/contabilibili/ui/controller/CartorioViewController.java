@@ -22,6 +22,7 @@ public class CartorioViewController {
     private final ListarCartorios listarCartorios;
     private final SalvarCartorio salvarCartorio;
     private final ExcluirCartorio excluirCartorio;
+    private MainViewController mainController;
 
     @FXML
     private TableView<Cartorio> tabelaCartorios;
@@ -109,5 +110,16 @@ public class CartorioViewController {
         campoNome.clear();
         labelId.setText("");
         btnExcluir.setDisable(true);
+    }
+
+    public void setMainController(MainViewController mainController) {
+        this.mainController = mainController;
+    }
+
+    @FXML
+    void onVoltarClick(ActionEvent event) {
+        if (mainController != null) {
+            mainController.abrirTelaHome();
+        }
     }
 }
