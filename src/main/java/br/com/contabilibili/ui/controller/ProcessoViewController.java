@@ -6,7 +6,6 @@ import br.com.contabilibili.domain.model.Pessoa;
 import br.com.contabilibili.domain.model.Processo;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -17,11 +16,9 @@ import java.util.List;
 @Component
 public class ProcessoViewController {
 
-    // Use cases do módulo
     private final ListarProcessos listarProcessos;
     private final SalvarProcesso salvarProcesso;
     private final ExcluirProcesso excluirProcesso;
-    // Use cases de outros módulos para popular ComboBoxes
     private final ListarCartorios listarCartorios;
     private final ListarPessoas listarPessoas;
 
