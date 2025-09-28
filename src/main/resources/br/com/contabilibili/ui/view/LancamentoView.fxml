@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="550.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.contabilibili.ui.controller.LancamentoFinanceiroViewController">
+   <children>
+      <Label layoutX="24.0" layoutY="24.0" text="Lançamentos Financeiros">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tabelaLancamentos" layoutX="24.0" layoutY="65.0" prefHeight="250.0" prefWidth="730.0">
+        <columns>
+          <TableColumn fx:id="colunaId" prefWidth="50.0" text="ID" />
+          <TableColumn fx:id="colunaDescricao" prefWidth="250.0" text="Descrição" />
+           <TableColumn fx:id="colunaValor" prefWidth="100.0" text="Valor" />
+           <TableColumn fx:id="colunaData" prefWidth="100.0" text="Data" />
+           <TableColumn fx:id="colunaTipo" prefWidth="100.0" text="Tipo" />
+           <TableColumn fx:id="colunaProcesso" prefWidth="130.0" text="Processo" />
+        </columns>
+      </TableView>
+      <Label layoutX="24.0" layoutY="330.0" text="Descrição:" />
+      <TextField fx:id="campoDescricao" layoutX="24.0" layoutY="350.0" prefWidth="730.0" />
+       <Label layoutX="24.0" layoutY="390.0" text="Valor (ex: 123.45):" />
+       <TextField fx:id="campoValor" layoutX="24.0" layoutY="410.0" prefWidth="150.0" />
+       <Label layoutX="200.0" layoutY="390.0" text="Data:" />
+       <DatePicker fx:id="datePickerData" layoutX="200.0" layoutY="410.0" prefWidth="150.0" />
+       <Label layoutX="374.0" layoutY="390.0" text="Tipo:" />
+       <ComboBox fx:id="comboTipo" layoutX="374.0" layoutY="410.0" prefWidth="150.0" />
+       <Label layoutX="548.0" layoutY="390.0" text="Processo:" />
+       <ComboBox fx:id="comboProcesso" layoutX="548.0" layoutY="410.0" prefWidth="206.0" />
+      <HBox alignment="CENTER_RIGHT" layoutX="24.0" layoutY="460.0" prefWidth="730.0" spacing="10.0">
+         <children>
+             <Button onAction="#onVoltarClick" style="-fx-base: #f0ad4e;" text="Voltar" />
+            <Button onAction="#onNovoClick" text="Novo" />
+            <Button fx:id="btnExcluir" onAction="#onExcluirClick" text="Excluir" />
+            <Button onAction="#onSalvarClick" text="Salvar" />
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+      <Label fx:id="labelId" layoutX="24.0" layoutY="510.0" text="ID:" visible="false" />
+   </children>
+</AnchorPane>
