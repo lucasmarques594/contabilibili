@@ -43,6 +43,16 @@ public class MainViewController {
     }
 
     @FXML
+    void abrirTelaProcessos(ActionEvent event) {
+        carregarView("ProcessoView", true);
+    }
+
+    @FXML
+    void abrirTelaLancamentos(ActionEvent event) {
+        carregarView("LancamentoFinanceiroView", true);
+    }
+
+    @FXML
     void fecharAplicacao(ActionEvent event) {
         Platform.exit();
     }
@@ -53,16 +63,23 @@ public class MainViewController {
                     getClass().getResource("/br/com/contabilibili/ui/view/" + viewNome + ".fxml"));
             loader.setControllerFactory(springContext::getBean);
             Parent view = loader.load();
+
             if (passarReferencia) {
-                if (loader.getController() instanceof CartorioViewController) {
-                    ((CartorioViewController) loader.getController()).setMainController(this);
-                } else if (loader.getController() instanceof PessoaViewController) {
-                    ((PessoaViewController) loader.getController()).setMainController(this);
+                Object controller = loader.getController();
+                if (controller instanceof CartorioViewController) {
+                    ((CartorioViewController) controller).setMainController(this);
+                } else if (controller instanceof PessoaViewController) {
+                    ((PessoaViewController) controller).setMainController(this);
+                } else if (controller instanceof ProcessoViewController) {
+                    ((ProcessoViewController) controller).setMainController(this);
+                } else if (controller instanceof LancamentoFinanceiroViewController) {
+                    ((LancamentoFinanceiroViewController) controller).setMainController(this);
                 }
             }
 
             mainPane.setCenter(view);
         } catch (IOException e) {
+            System.err.println("Erro ao carregar a view: " + viewNome);
             e.printStackTrace();
         }
     }
