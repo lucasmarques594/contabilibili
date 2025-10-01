@@ -107,6 +107,15 @@ public class PessoaViewController {
 
     @FXML
     void onSalvarClick(ActionEvent event) {
+        if (campoNome.getText().trim().isEmpty()) {
+            exibirAlerta("Erro de Validação", "O campo 'Nome' não pode estar vazio.");
+            return;
+        }
+        if (comboTipoPessoa.getValue() == null) {
+            exibirAlerta("Erro de Validação", "Você deve selecionar um 'Tipo de Pessoa'.");
+            return;
+        }
+
         Pessoa pessoaParaSalvar = (pessoaSelecionada != null) ? pessoaSelecionada : new Pessoa();
         pessoaParaSalvar.setNome(campoNome.getText());
         pessoaParaSalvar.setTipoPessoa(comboTipoPessoa.getValue());
@@ -114,6 +123,14 @@ public class PessoaViewController {
         salvarPessoa.executar(pessoaParaSalvar);
         carregarDadosDaTabela();
         limparFormulario();
+    }
+
+    private void exibirAlerta(String titulo, String mensagem) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensagem);
+        alert.showAndWait();
     }
 
     private void limparFormulario() {
